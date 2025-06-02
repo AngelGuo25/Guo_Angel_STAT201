@@ -172,34 +172,8 @@ Print the results.
 Note: if done correctly this will print: TRUE FALSE FALSE
 
 ```{r}
-q3_sum <- function(lst){
-  sum_line <- c()
-  for (i in 1:length(lst)){
-    sum_line <- append(sum_line, sum(lst[[i]]))
-  }
-  return(sum_line)
-}
-
-q3_log <- function(vec){
-  sum_log <- c()
-  for (i in 1:length(vec)){
-    if (vec[i] %% 2 == 0){
-      sum_log <- append(sum_log, TRUE)
-    } else{
-      sum_log <- append(sum_log, FALSE)
-    }
-  }
-  return(sum_log)
-}
-
-
-list_sum <- sapply(q3_list, q3_sum)
-list_log <- lapply(list_sum, q3_log)
-
-sum_3 <- q3_sum(q3_list)
-log_3 <- q3_log(sum_3)
-print(log_3)
-
+even_sums <- sapply(q3_list, function(x) sum(x) %% 2 == 0)
+print(even_sums)
 
 ```
 
