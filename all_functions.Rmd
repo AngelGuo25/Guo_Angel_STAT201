@@ -1,0 +1,154 @@
+---
+title: "all_functions"
+output: html_document
+---
+
+cat(): 
+paste()
+  sep=
+  collapse="" # concatenate elements of a vector into a single string
+paste0(): no separator
+sprintf()
+
+nchar()
+substr()
+strsplit()
+grep()
+gsub()
+
+set.seed(42)
+runif(n, min, max): generates random num from a uniform distribution
+rnorm(n, mean, sd): generates random numbers from a normal distribution
+rbinom(n, sze, prob): binomial distribution
+rexp(n, lambda): exponential distribution
+rpois(): Poisson distribution
+sample(start:end, n, replace=)
+
+my_function <- function(arguments) {
+  function statements
+  return()
+}
+
+```{r}
+```
+ATOMIC VECTOR
+is.atomic(x): returns TRUE if x is an atomic object
+  list and expression are NOT atomic, just vectors
+is.vector(x): returns TRUE if x is a vector
+sapply(vector, typeof)
+length() = number of elements
+
+splice
+vec[start:end] = splicing
+vec[c(1:2, 4)] = splice the 1, 2, and 4th
+vec[c(TRUE, FALSE, FALSE)] = splice the 1st
+vec[vec > num] = return the elements greater than that num
+
+modify/add
+vec[2] <- 100 # modify an element
+append(vec, element, after=) #add an element at a specific location
+new_vec <- c(vec, value1, value2) # expand a vector
+
+remove
+vec <- vec[-position]
+vec <- vec[-c(1:3, 5)]
+
+sapply(vec, function)
+  sapply(vec, function(x) x**2) # outputs the square of each element
+length(vec) = number of elements
+unique(vec) = remove duplicate values
+sort(vec) = sorts in ascending order
+rev(vec) = reverses the order of elements
+
+rep(num/vec, #repeat) 
+  rep(x, times) # repeat 4 ten times
+which(vec == 8) #find indices of TRUE elements in a vector
+  which.max(vec)
+  which.min(vec)
+
+results_add <- vec1 + vec2
+  if one vec is shorter, R recycles it
+
+```{r}
+```
+MATRIX
+matrix(start_num:end_num, nrow=, ncol=, byrow=TRUE/FALSE)
+
+dim(mat) = c(rows, cols)
+length(mat) = number of elements
+nrow(mat)
+ncol(mat)
+
+rownames(mat) <- c("row1", "row2",...)
+colnames(mat)
+
+cbind(mat, new_col=c(1,2,3)): add by column
+  the new column will have colname "new_col"
+rbind(): add by row
+
+mat_new <- mat_new[-row, -col]
+apply()
+  row_sum <- apply(my_matrix, 1, sum) # sum the rows
+  col_sum <- apply(my_matrix, 2, sum) # sum the cols
+
+"val" %in% mat # check if value is in mat
+
+```{r}
+```
+LIST
+list() # create a list
+
+[] and [[]]
+  [] returns a sublist (many elements)
+  [[]] returns the element itself (only one element)
+
+names(lst) <- c("name1", "name2",...)
+lst$name1
+
+unlist() = convert a list to an atomic vector
+lapply() and sapply() = apply a function over elements
+  lapply(): returns a list
+  sapply(): returns a vector or a matrix
+
+
+```{r}
+```
+DATA FRAMES
+each column can have a diff type
+data.frame() # creation
+
+df$col_name # access a col
+def[row_name, ] # access a row
+
+filter_df <- subset(df, col_name > value)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
